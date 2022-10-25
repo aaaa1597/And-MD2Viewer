@@ -21,7 +21,7 @@ JNIEXPORT void JNICALL Java_com_tks_md2viewer_NativeLibIf_surfaceCreated(JNIEnv 
 
 JNIEXPORT void JNICALL Java_com_tks_md2viewer_NativeLibIf_surfaceChanged(JNIEnv */*env*/, jclass /*clazz*/, jint id, jint width, jint height) {
     __android_log_print(ANDROID_LOG_INFO, "aaaaa", "id=%d %s %s(%d)", id, __PRETTY_FUNCTION__, __FILE_NAME__, __LINE__);
-    gSufaces.at(id).surfaceChanged();
+    gSufaces.at(id).surfaceChanged(width, height);
 }
 
 JNIEXPORT void JNICALL Java_com_tks_md2viewer_NativeLibIf_surfaceDestroyed(JNIEnv */*env*/, jclass /*clazz*/, jint id) {
