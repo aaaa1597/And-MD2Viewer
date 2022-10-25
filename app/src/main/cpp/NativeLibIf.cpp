@@ -14,7 +14,7 @@ extern "C" {
 JNIEXPORT void JNICALL Java_com_tks_md2viewer_NativeLibIf_surfaceCreated(JNIEnv *pEnv, jclass /*clazz*/, jint id, jobject surface) {
     __android_log_print(ANDROID_LOG_INFO, "aaaaa", "id=%d gSufaces.size=%d %s %s(%d)", id, gSufaces.size(), __PRETTY_FUNCTION__, __FILE_NAME__, __LINE__);
     gSufaces.emplace(id, NativeSurface());
-    /* SurfaceView‚ÌNativeWindow‚ğæ“¾ */
+    /* SurfaceViewã®NativeWindowã‚’å–å¾— */
     ANativeWindow *pWindow = ANativeWindow_fromSurface(pEnv, surface);
     gSufaces.at(id).surfaceCreated(pWindow);
 }
